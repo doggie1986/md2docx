@@ -1,0 +1,10 @@
+# 本机 git 的 core.autocrlf=true（Git for Windows 默认），所以"文本怎么存"必须在这里说死，
+# 否则换一个机器克隆就可能拿到一套不同的换行。
+
+* text=auto eol=lf
+
+# 双击启动项：cmd.exe 认不了纯 LF，而且文件里是 GBK 字节，一个都不能改。
+*.bat -text
+
+*.docx binary
+*.png binary

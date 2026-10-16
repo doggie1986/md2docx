@@ -1,0 +1,12 @@
+# LaTeX → MathML → OMML 这条链的三个依赖，其余全用标准库。
+# 版本是这台机器上实测过的（.venv 里跑通 demo.md 的那一组）；行尾的注释写的是"这一条管什么"。
+
+latex2mathml==3.81.1   # LaTeX → MathML：认不认得某条公式由它决定，升级会改变成败清单
+lxml==6.1.3            # 跑 Microsoft 的 MML2OMML.XSL（etree.XSLT），并复核产出的 OMML
+python-docx==1.2.0     # 建 .docx 包与样式表；表格、段落、run 属性都走它
+
+# 桌面界面（gui/ 与 gui_app.py）多出来的这一条；命令行那条链不 import 它，
+# 所以 `python md2docx.py …` 在没有显示环境的机器上照样能跑。
+# 选 Essentials 而不是 PySide6 全家桶：这一屏只用 QtWidgets/QtGui/QtCore，
+# 全家桶会拖进 QtWebEngine 与 3D 那几百 MB。
+PySide6-Essentials==6.8.3   # 三栏窗口、QSS 主题、QThread 跑批、QSettings 存窗口尺寸都出自它

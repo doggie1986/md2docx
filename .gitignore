@@ -1,0 +1,15 @@
+# 虚拟环境：232 MB 的依赖，`pip install -r requirements.txt` 就能重建，不是代码。
+.venv/
+.pip-cache/
+
+# 字节码缓存
+__pycache__/
+*.py[cod]
+
+# 转换产物：跑一遍就有，且每次跑都换一个名字。
+out/
+
+# 编辑器/系统
+.idea/
+.vscode/
+.DS_Store
